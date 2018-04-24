@@ -8,3 +8,32 @@
   font-weight: 300 !important;
   line-height: 1.2 !important;
 }
+
+.text-cs-blue {
+  color: #0a1699 !important;
+}
+
+.text-cs-orange {
+  color: #f2b602 !important;
+}
+
+.bg-cs-blue {
+  background-color: #0a1699 !important;
+}
+
+.bg-cs-orange {
+  background-color: #f2b602 !important;
+}
+
+.navbar .nav-link {
+  color: #f2b602 !important;
+  transition: .3s ease;
+}
+
+.navbar .nav-link:hover {
+  background-color: #060e5f;
+}
+
+.list-group > .list-group-item {
+  background-color: #f2b602 !important;
+}
