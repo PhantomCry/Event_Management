@@ -51,6 +51,10 @@
   position: fixed;
 }
 
+.top-25 {
+  margin-top: 28vh !important;
+}
+
 /* IDs */
 
 #header {
@@ -62,6 +66,7 @@
   background-color: rgba(255, 255, 255, .5);
   background-blend-mode: lighten;
   z-index: 2;
+  top: 0;
 }
 
 /* CUSTOM STYLE */
@@ -69,4 +74,9 @@
 .card-image > img {
   width: 25vw !important;
   height: 25vw% !important;
+}
+
+#events {
+  transition: .65s ease;
+  margin-top: -3000px;
 }
