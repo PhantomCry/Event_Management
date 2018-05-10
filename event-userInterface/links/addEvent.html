@@ -14,68 +14,89 @@
 <body>
   <nav class="transparent z-depth-0">
     <div class="nav-wrapper">
-      <a href="../" class="brand-logo">
-        <img src="../LOGO.png" alt="Logo" id="logo" style="width: 150px;height: auto;">
+      <a href="../" class="brand-logo ml-3">
+        <img src="../LOGO.png" alt="Logo" id="addEventLogo">
       </a>
     </div>
   </nav>
   
-  <div class="row">
-    <div class="col s4 container flex flex-column">
+  <div class="row mt-1">
+    <div class="col s3 container">
       <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg" class="responsive-img materialbox">
-      <button class="btn center waves-effect mx-auto mt-1">Upload Display Image</button>
+      <div class="btn-group flex flex-column">
+        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit Display Image</button>
+        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button>
+        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Save Event</button>
+        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Delete Event</button>
+      </div>
     </div>
-    <div class="col s8">
+    <div class="col s9">
       <div class="row">
-        <div class="col s6 offset-s6">
-          <div class="input-field">
-            <input type="text" id="organizer">
-            <label for="organizer">Organizer</label>
-          </div>
-        </div>
         <div class="col s6">
           <div class="input-field">
             <input type="text" id="title">
-            <label for="title">Event Title</label>
+            <label for="title" class="pink-text">Event Title</label>
           </div>
         </div>
         <div class="col s6">
-          <div class="input-field">
-            <input type="text" id="sDate">
-            <label for="sDate">Start Date</label>
-          </div>
+          <div class="chips pink-text" id="organizer"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <div class="chips pink-text" id="venue"></div>
         </div>
         <div class="col s6">
           <div class="input-field">
-            <input type="text" id="venue">
-            <label for="venue">Event Venue</label>
+            <input type="text" class="datepicker" id="sDate">
+            <label for="sDate" class="pink-text">Start Date</label>
           </div>
         </div>
         <div class="col s6">
-          <div class="input-field">
-            <input type="text" id="eDate">
-            <label for="eDate">End Date</label>
-          </div>
+          <div class="chips chips-autocomplete chips-placeholder pink-text" id="tags"></div>
         </div>
-        <div class="col s12">
+        <div class="col s6">
           <div class="input-field">
-            <div class="chips chips-autocomplete chips-placeholder"></div>
+            <input type="text" class="datepicker" id="eDate">
+            <label for="eDate" class="pink-text">End Date</label>
           </div>
         </div>
       </div>
-      <div class="card hide">
-        <div class="card-content">
-          <div class="input-field">
-            <input type="text" id="fTitle">
-            <label for="fTitle">Field Title</label>
+      <div class="pink lighten-5 p-1">
+        <div class="row">
+          <div class="col s9">
+            <div class="input-field">
+              <input type="text" id="fieldTitle">
+              <label for="fieldTitle" class="pink-text">Field Title</label>
+            </div>
+            <div class="input-field">
+              <textarea id="text" class="materialize-textarea"></textarea>
+              <label for="text" class="pink-text">Text</label>
+            </div>
+            <div>
+              <div class="left">
+                <div class="pink-text">Document</div>
+                <img src="https://cdn.onlinewebfonts.com/svg/img_77564.png" class="file-img">
+                <div>Attendance-ling name.xlsx</div>
+              </div>
+              <div class="left">
+                <button class="btn add mt-1 pink"><i class="material-icons">add</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="btn-group flex flex-column">
+              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Text</button>
+              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Document</button>
+              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Media</button>
+              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Remove</button>
+              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button>
+              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Done</button>
+            </div>
           </div>
         </div>
       </div>
-      <button class="btn">Add Field</button>
-    </div>
-    <div class="right mt-5">
-      <button class="btn">Cancel</button>
-      <button class="btn">Save</button>
+      <button class="btn pink right">Add Field</button>
     </div>
   </div>
   

@@ -14,14 +14,27 @@ $(function () {
       minLength: 1
     }
   });
-  $('.chips-placeholder').chips({
+  $('#tags').chips({
     placeholder: 'Enter a tag',
-    secondaryPlaceholder: '+Tag'
+    secondaryPlaceholder: 'Add another tag'
   });
+  $('#organizer').chips({
+    placeholder: 'Organizer',
+    secondaryPlaceholder: 'Add another organizer'
+  });
+  $('#venue').chips({
+    placeholder: 'Venue',
+    secondaryPlaceholder: 'Add another venue'
+  });
+  $('.datepicker').datepicker();
   
   $('#search').on('click', function () {
     $('#header').addClass('h-25');
     $('#events').addClass('top-25');
     $('#logo').hide(500);
+    $('#searchContainer').removeClass('pb-5');
+    $('#exNav').removeClass('op-0');
+    $('#exaddeve').hide(500);
   });
+
 });
