@@ -25,16 +25,25 @@
       <div class="flow-text">Are you sure you want DELETE THE EVENT?</div>
     </div>
     <div class="modal-footer">
-      <button class="btn modal-close blue">yes</button>
+      <button data-target="confirm" class="btn modal-close modal-trigger blue">yes</button>
       <button class="btn modal-close red">no</button>
+    </div>
+  </div>
+
+  <div class="modal" id="confirm">
+    <div class="modal-content">
+      <div class="flow-text">The event has been deleted</div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn modal-close pink">ok</button>
     </div>
   </div>
 
   <div class="row mt-1">
     <div class="col s3 container">
-      <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg" class="responsive-img materialbox">
+      <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg" class="responsive-img">
       <div class="btn-group flex flex-column">
-        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit</button>
+        <a href="addEvent.html" class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit</a href="../.">
         <button data-target="delete" class="btn center waves-effect mx-auto mt-1 w-100 pink modal-trigger">Delete Event</button>
       </div>
     </div>

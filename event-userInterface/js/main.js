@@ -41,5 +41,4 @@ $(function () {
   });
 
   $('.readonly>input').attr('readonly',true);
-  // $('.chips input').html('<i class="material-icons prefix">icon d2</a>');
 });
