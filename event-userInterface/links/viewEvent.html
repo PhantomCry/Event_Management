@@ -20,12 +20,22 @@
     </div>
   </nav>
   
+  <div class="modal" id="delete">
+    <div class="modal-content">
+      <div class="flow-text">Are you sure you want DELETE THE EVENT?</div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn modal-close blue">yes</button>
+      <button class="btn modal-close red">no</button>
+    </div>
+  </div>
+
   <div class="row mt-1">
     <div class="col s3 container">
       <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg" class="responsive-img materialbox">
       <div class="btn-group flex flex-column">
         <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit</button>
-        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Delete Event</button>
+        <button data-target="delete" class="btn center waves-effect mx-auto mt-1 w-100 pink modal-trigger">Delete Event</button>
       </div>
     </div>
     <div class="col s9">
@@ -46,7 +56,7 @@
         </div>
         <div class="col s6">
           <div class="input-field">
-            <input type="text" id="sDate" value="Mar 21, 2018" readonly>
+            <input type="text" id="sDate" value="2018-03-21" readonly>
             <label for="sDate" class="pink-text">Start Date</label>
           </div>
         </div>
@@ -55,7 +65,7 @@
         </div>
         <div class="col s6">
           <div class="input-field">
-            <input type="text" id="eDate" value="Mar 21, 2018" readonly>
+            <input type="text" id="eDate" value="2018-03-21" readonly>
             <label for="eDate" class="pink-text">End Date</label>
           </div>
         </div>

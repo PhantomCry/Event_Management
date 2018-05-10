@@ -26,7 +26,10 @@ $(function () {
     placeholder: 'Venue',
     secondaryPlaceholder: 'Add another venue'
   });
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+    format: "yyyy-mm-dd"
+  });
+  $('.modal').modal();
   
   $('#search').on('click', function () {
     $('#header').addClass('h-25');
