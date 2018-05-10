@@ -24,9 +24,7 @@
     <div class="col s3 container">
       <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg" class="responsive-img materialbox">
       <div class="btn-group flex flex-column">
-        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit Display Image</button>
-        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button>
-        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Save Event</button>
+        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit</button>
         <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Delete Event</button>
       </div>
     </div>
@@ -34,43 +32,43 @@
       <div class="row">
         <div class="col s6">
           <div class="input-field">
-            <input type="text" id="title">
-            <label for="title" class="pink-text">Event Title</label>
+            <input type="text" id="title" value="Louisian Agenda with the SLU President and Vice Presidents" readonly>
+            <label for="title" class="pink-text readonly">Event Title</label>
           </div>
         </div>
         <div class="col s6">
-          <div class="chips pink-text" id="organizer"></div>
+          <div class="chips pink-text readonly" id="organizer"><div class="chip">Chip</div></div>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-          <div class="chips pink-text" id="venue"></div>
+          <div class="chips pink-text readonly" id="venue"><div class="chip">Chip</div></div>
         </div>
         <div class="col s6">
           <div class="input-field">
-            <input type="text" class="datepicker" id="sDate">
+            <input type="text" id="sDate" value="Mar 21, 2018" readonly>
             <label for="sDate" class="pink-text">Start Date</label>
           </div>
         </div>
         <div class="col s6">
-          <div class="chips chips-autocomplete chips-placeholder pink-text" id="tags"></div>
+          <div class="chips chips-autocomplete chips-placeholder pink-text readonly" id="tags"><div class="chip">Chip</div></div>
         </div>
         <div class="col s6">
           <div class="input-field">
-            <input type="text" class="datepicker" id="eDate">
+            <input type="text" id="eDate" value="Mar 21, 2018" readonly>
             <label for="eDate" class="pink-text">End Date</label>
           </div>
         </div>
       </div>
       <div class="pink lighten-5 p-1">
         <div class="row">
-          <div class="col s9">
+          <div class="p-1">
             <div class="input-field">
-              <input type="text" id="fieldTitle">
+              <input type="text" id="fieldTitle" value="People Involved" readonly>
               <label for="fieldTitle" class="pink-text">Field Title</label>
             </div>
             <div class="input-field">
-              <textarea id="text" class="materialize-textarea"></textarea>
+              <textarea id="text" class="materialize-textarea" readonly>The Louisian Agenda blah blah blah blah blah blah blah blah blah blah blah blah blah blah </textarea>
               <label for="text" class="pink-text">Text</label>
             </div>
             <div>
@@ -79,24 +77,10 @@
                 <img src="https://cdn.onlinewebfonts.com/svg/img_77564.png" class="file-img">
                 <div>Attendance-ling name.xlsx</div>
               </div>
-              <div class="left">
-                <button class="btn add mt-1 pink waves-effect"><i class="material-icons">add</i></button>
-              </div>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="btn-group flex flex-column">
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Text</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Document</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Media</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Remove</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Done</button>
             </div>
           </div>
         </div>
       </div>
-      <button class="btn pink right waves-effect">Add Field</button>
     </div>
   </div>
   
