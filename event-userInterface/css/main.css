@@ -265,3 +265,11 @@
 input:not([type])[readonly="readonly"] {
   border-bottom: none;
 }
+
+.event-name {
+  max-width: 80%
+}
+
+.event-organizer {
+  max-width: 20%;
+}
