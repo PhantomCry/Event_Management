@@ -19,7 +19,7 @@
       </a>
     </div>
   </nav>
-   
+  
   <div class="modal" id="delete">
     <div class="modal-content">
       <div class="flow-text">Are you sure you want DELETE THE EVENT?</div>
@@ -29,7 +29,7 @@
       <button class="btn modal-close red">no</button>
     </div>
   </div>
-
+  
   <div class="modal" id="confirm">
     <div class="modal-content">
       <div class="flow-text">The event has been deleted</div>
@@ -38,7 +38,7 @@
       <button class="btn modal-close pink">ok</button>
     </div>
   </div>
-
+  
   <div class="row mt-1">
     <div class="col s3 container">
       <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg" class="responsive-img">
@@ -99,7 +99,10 @@
                 <div>Attendance-ling name.xlsx</div>
               </div>
               <div class="left">
-                <button class="btn add mt-1 pink waves-effect"><i class="material-icons">add</i></button>
+                <label for="fileInput" class="btn add mt-1 pink waves-effect flex justify-content-center">
+                  <i class="material-icons align-self-center">add</i>
+                  <input type="file" class="hide" id="fileInput">
+                </label>
               </div>
             </div>
           </div>

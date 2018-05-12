@@ -218,6 +218,14 @@
   margin: auto;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
 /* IDs */
 
 #header {
