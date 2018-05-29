@@ -45,18 +45,18 @@
           </div>
         </div>
         <div class="col s6">
-            <div class="input-field">
-              {{Form::label('organizer', 'Organizer', ['class' => 'pink-text'])}}
-              {{Form::text('organizer', '')}}
+            <div class="chips">
             </div>
+            {{Form::text('organizer', '', ['style'=> 'border:none;margin:0;padding:0', 
+            'class'=>'hide','placeholder'=>'hidden'])}}
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-            <div class="input-field">
-                {{Form::label('venue', 'Venue', ['class' => 'pink-text'])}}
-                {{Form::text('venue', '')}}
-              </div>
+            <div class="chips">
+            </div>
+            {{Form::text('organizer', '', ['style'=> 'border:none;margin:0;padding:0', 
+            'class'=>'hide','placeholder'=>'hidden'])}}
         </div>
         <div class="col s6">
           <div class="input-field">
