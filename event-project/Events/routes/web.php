@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', 'MainController@index');
+Route::get('/', 'PagesController@index');
+
+Route::resource('event', 'PostsController');
