@@ -72,7 +72,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $details = Events::find($id);
+        return view('pages.edit')->with('events', $details);
     }
 
     /**
@@ -84,7 +85,19 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'eventname' => 'required'           
+        ]);
+        
+        $event = Events::find($id);
+        $event->eventname = $request->input('eventname');
+        $event->managedBy = $request->input('organizer');
+        $event->venue = $request->input('venue');
+        $event->startdate = $request->input('sDate');
+        $event->enddate = $request->input('eDate');
+        $event->save();
+
+        return redirect('/');
     }
 
     /**

@@ -28,37 +28,38 @@
       <div class="btn-group flex flex-column">
         <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit Display Image</button>
         <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button>
-        {{Form::submit('Save Event', ['form'=> 'eventform', 'class' => 'btn center waves-effect mx-auto mt-1 w-100 pink'])}}
+        {{Form::submit('Save Changes', ['form'=> 'eventform', 'class' => 'btn center waves-effect mx-auto mt-1 w-100 pink'])}}
         <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Delete Event</button>
       </div>
     </div>
-    {!! Form::open(['action'=>'PostsController@store', 'method'=>'post', 'id' => 'eventform', 'class' => 'col s9']) !!}
+    {!! Form::open(['action'=> ['PostsController@update', $events->idevents], 'method'=>'post', 'id' => 'eventform', 'class' => 'col s9']) !!}
       <div class="row">
         <div class="col s6">
           <div class="input-field">
             {{Form::label('eventname', 'Event Name', ['class' => 'pink-text'])}}
-            {{Form::text('eventname', '')}}
+            {{Form::text('eventname', $events->eventname)}}
           </div>
         </div>
         <div class="col s6">
             <div class="chips" id="org">
             </div>
-            {{Form::text('organizer', '', ['style'=> 'border:none;margin:0;padding:0', 
+            {{Form::text('organizer', $events->managedBy, ['style'=> 'border:none;margin:0;padding:0', 
             'class'=>'hide','id'=>'organizerInput'])}}
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-            <div class="chips" id="venue"></div>
-            {{Form::text('venue', '', ['style'=> 'border:none;margin:0;padding:0', 
+            <div class="chips" id="venue">
+            </div>
+            {{Form::text('venue', $events->venue, ['style'=> 'border:none;margin:0;padding:0', 
             'class'=>'hide','id'=>'venueInput'])}}
         </div>
         <div class="col s6">
           <div class="input-field">
             {{Form::label('sDate', 'Start Date', ['class' => 'pink-text'])}}
-            {{Form::text('sDate', '', ['class' => 'datepicker'])}}
-          </div>
-        </div>
+            {{Form::text('sDate', $events->startdate, ['class' => 'datepicker'])}}
+          </div> 
+        </div>  
         <div class="col s6">
             <div class="input-field">
                 {{Form::label('tag', 'Tag', ['class' => 'pink-text'])}}
@@ -68,7 +69,7 @@
         <div class="col s6">
           <div class="input-field">
             {{Form::label('eDate', 'End Date', ['class' => 'pink-text'])}}
-            {{Form::text('eDate', '', ['class' => 'datepicker'])}}
+            {{Form::text('eDate', $events->enddate, ['class' => 'datepicker'])}}
           </div>
         </div>
       </div>
@@ -107,6 +108,7 @@
         </div>
       </div>
       <button class="btn pink right">Add Field</button>
+      {{Form::hidden('_method', 'PUT')}}
     {!! Form::close() !!}
   </div>
   @include('includes.scripts')

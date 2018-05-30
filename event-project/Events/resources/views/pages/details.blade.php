@@ -43,7 +43,7 @@
     <div class="col s3 container">
       <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg" class="responsive-img">
       <div class="btn-group flex flex-column">
-        <a href="addEvent.html" class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit</a href="../.">
+        <a href="/event/{{$events->idevents}}/edit" class="btn center waves-effect mx-auto mt-1 w-100 pink">Edit</a>
         <button data-target="delete" class="btn center waves-effect mx-auto mt-1 w-100 pink modal-trigger">Delete Event</button>
       </div>
     </div>
@@ -56,7 +56,10 @@
           </div>
         </div>
         <div class="col s6">
-          <div class="chips pink-text readonly" id="organizer"><div class="chip">{{$events->managedBy}}</div></div>
+          <div class="chips pink-text readonly" id="organizer">
+            <div class="chip">{{$events->managedBy}}
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">

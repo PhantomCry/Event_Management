@@ -290,3 +290,6 @@ input:not([type])[readonly="readonly"] {
   max-width: 20%;
 }
 
+.chip {
+  background-color: cadetblue !important;
+}
