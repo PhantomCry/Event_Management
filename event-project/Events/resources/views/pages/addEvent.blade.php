@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <nav class="transparent z-depth-0">
+  <nav class="teal darken-1">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo ml-3">
         <img src="{{asset('images/LOGO.png')}}" alt="Logo" id="addEventLogo">
@@ -71,42 +71,25 @@
             {{Form::text('eDate', '', ['class' => 'datepicker'])}}
           </div>
         </div>
-      </div>
-      <div class="pink lighten-5 p-1">
-        <div class="row">
-          <div class="col s9">
-            <div class="input-field">
-              <label for="fieldTitle" class="pink-text">Field Title</label>
-              <input type="text" id="fieldTitle">
-            </div>
-            <div class="input-field">
-              <label for="text" class="pink-text">Text</label>
-              <textarea id="text" class="materialize-textarea"></textarea>
-            </div>
-            <div>
-              <div class="left">
-                <div class="pink-text">Document</div>
-                <img src="https://cdn.onlinewebfonts.com/svg/img_77564.png" class="file-img">
-                <div>Attendance-ling name.xlsx</div>
-              </div>
-              <div class="left">
-                <button class="btn add mt-1 pink"><i class="material-icons">add</i></button>
-              </div>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="btn-group flex flex-column">
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Text</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Document</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Media</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Remove</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button>
-              <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Done</button>
-            </div>
-          </div>
+        <div class="p-1">
+            <button type="button" class="btn pink right">Add New Field</button>
         </div>
       </div>
-      <button class="btn pink right">Add Field</button>
+
+      <div>
+        <div class="input-field">
+            {{Form::label('field', 'Field Title', ['class' => 'pink-text'])}}
+            {{Form::text('field', '')}}
+        </div>
+        <div class="input-field">
+            {{Form::label('body', 'Body', ['class' => 'pink-text'])}}
+            {{Form::text('body', '')}}
+        </div>
+        <div class="p-1 hide">
+            <button type="button" class="btn pink right">Add New Field</button>
+        </div>
+      </div>
+      
     {!! Form::close() !!}
   </div>
   @include('includes.scripts')

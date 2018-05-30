@@ -41,18 +41,16 @@
           </div>
         </div>
         <div class="col s6">
-            <div class="chips" id="org">
-            </div>
-            {{Form::text('organizer', $events->managedBy, ['style'=> 'border:none;margin:0;padding:0', 
-            'class'=>'hide','id'=>'organizerInput'])}}
+          <div class="input-field">
+            <div class="chips" id="organizer"></div>
+            {{Form::text('organizer', '', ['id'=>'organizerInput', 'class'=> 'hide'])}}
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-            <div class="chips" id="venue">
-            </div>
-            {{Form::text('venue', $events->venue, ['style'=> 'border:none;margin:0;padding:0', 
-            'class'=>'hide','id'=>'venueInput'])}}
+            <div class="chips" id="venue"></div>
+            {{Form::text('venue', '', ['id'=> 'venueInput', 'class'=>'hide'])}}
         </div>
         <div class="col s6">
           <div class="input-field">
@@ -112,6 +110,54 @@
     {!! Form::close() !!}
   </div>
   @include('includes.scripts')
+  <script type="text/javascript">
+
+    $(function() {
+      var eventVenue = [];
+      var eventOrg = [];
+      
+      var venue = <?php echo json_encode($events->venue);?>.split(',');
+      var org = <?php echo json_encode($events->managedBy);?>.split(',');
+
+      $.each(venue, function(key, value) {
+        eventVenue.push({tag: value});
+      });
+
+      $.each(org, function(key, value) {
+        eventOrg.push({tag: value});
+      });
+      
+      $('#venue').chips({
+        data: eventVenue
+      });
+
+      $('#organizer').chips({
+        data: eventOrg
+      });
+      //Store in hidden input
+    var org = [];
+    var venue = [];
+    $('form').on('click keydown', function () {
+      
+    org = [];
+    venue = [];
+    
+    $.each(M.Chips.getInstance($('#organizer')).chipsData, function (key, value) {
+      org.push(value.tag);
+    });
+
+    $.each(M.Chips.getInstance($('#venue')).chipsData, function (key, value) {
+      venue.push(value.tag);
+    });
+
+    $('#organizerInput').val(org.join());
+    $('#venueInput').val(venue.join());
+    console.log($('#organizerInput').val(org.join()));
+  });
+      // console.log(eventVenue);
+    });
+    
+  </script>
 </body>
 
 </html>

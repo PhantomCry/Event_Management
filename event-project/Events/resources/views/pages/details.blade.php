@@ -64,7 +64,7 @@
       </div>
       <div class="row">
         <div class="col s6">
-          <div class="chips pink-text readonly" id="venue"><div class="chip">{{$events->venue}}</div></div>
+          <div class="chips pink-text readonly" id="venue"></div>
         </div>
         <div class="col s6">
           <div class="input-field">
@@ -109,6 +109,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{asset('js/materialize.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+  <script>
+  $(function(){
+    var eventVenue = [];
+    var eventOrg = [];
+      
+    var venue = <?php echo json_encode($events->venue);?>.split(',');
+    var org = <?php echo json_encode($events->managedBy);?>.split(',');
+    
+    var appender = '';
+
+    $.each(venue, function(key, value) {
+      appender += `<div class="chip">${value}</div>`;
+    });
+    $('#venue').html(appender);
+    appender = '';
+
+    $.each(org, function(key, value) {
+      appender += `<div class="chip">${value}</div>`;
+    });
+    $('#organizer').html(appender);
+    appender = '';
+  });
+  </script>
 </body>
 
 </html>

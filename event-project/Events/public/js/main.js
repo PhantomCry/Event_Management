@@ -12,7 +12,7 @@ $(function () {
   $('form').on('submit', function () {
     org = [];
     venue = [];
-
+    
     $.each(M.Chips.getInstance($('#org')).chipsData, function (key, value) {
       org.push(value.tag);
     });
