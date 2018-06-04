@@ -13,31 +13,57 @@
 </head>
 
 <body>
-  @include ('includes/header')
-  @if(count($events) > 0)
-  <div class="container" id="events">
+  @include ('includes/header') @if(count($events) > 0)
+  <div class="row" id="events">
     @foreach($events as $event)
-    <a href="/event/{{$event->idevents}}" class="card horizontal waves-effect black-text">
-      <div class="card-image">
-        <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content flex flex-column">
-          <div class="card-title">
-            <div class="left event-name">{{$event->eventname}}</div>
-            <small class="right event-organizer">{{$event->managedBy}}</small>
+    <div class="col s12 m4 l3 events-col">
+      <a href="/event/{{$event->idevents}}">
+        <div class="card waves-effect waves-block">
+          <div class="card-image">
+            <img src="http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg">
+            <div class="card-title">{{$event->eventname}}</div>
           </div>
-          <div class="mt-auto">
-            <div class="pr-1">Event Date: {{$event->startdate}}</div>
-            <div class="chip">{{$event->venue}}</div>
+          <div class="card-content card-display">
+          <div class="mb-1">Event Date: {{$event->startdate}} - {{$event->enddate}}</div>
+            <div data-chips>
+              <div>Organizer/s: </div>
+              <input type="hidden" value="{{$event->managedBy}}">
+            </div>
+            <div data-chips>
+              <div>Venue/s: </div>
+              <input type="hidden" value="{{$event->venue}}">
+            </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
+
     @endforeach
   </div>
-  @endif
-  @include('includes.scripts')
+  @endif @include('includes.scripts')
+  <script>
+    $(function () {
+
+      $('#search').on('input', function() {
+        var cardName = $('.events-col .card-title');
+        $.each(cardName, function(key, value) {
+          if ($(value).text().toLowerCase().indexOf($('#search').val().toLowerCase()) > -1) {
+            $(value).parent().parent().parent().parent().show(300);
+          } else {
+            $(value).parent().parent().parent().parent().hide(300);
+          }
+        });
+      });
+
+      $.each($('[data-chips] > [type=hidden]'), function (key, value) {
+        var parent = $(this).parent();
+        var v = $(value).val().split(',');
+        $.each(v, function (i, val) {
+          $(parent).append("<div class=\"chip\">" + val + "</div>");
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
