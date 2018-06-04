@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <nav class="teal darken-1">
+  <nav class="transparent">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo ml-3">
         <img src="{{asset('images/LOGO.png')}}" alt="Logo" id="addEventLogo">
@@ -71,9 +71,6 @@
             {{Form::text('eDate', '', ['class' => 'datepicker'])}}
           </div>
         </div>
-        <div class="p-1">
-            <button type="button" class="btn pink right">Add New Field</button>
-        </div>
       </div>
 
       <div>
@@ -82,17 +79,23 @@
             {{Form::text('field', '')}}
         </div>
         <div class="input-field">
-            {{Form::label('body', 'Body', ['class' => 'pink-text'])}}
-            {{Form::text('body', '')}}
+          <div class="pink-text">
+            <span>Body</span>
+          </div>
+            {{Form::textarea('body', '', ['id'=>'editor'])}}
         </div>
-        <div class="p-1 hide">
-            <button type="button" class="btn pink right">Add New Field</button>
+        <div class="p-1">
+            <button type="button" class="btn pink right">Add Field</button>
         </div>
       </div>
       
     {!! Form::close() !!}
   </div>
   @include('includes.scripts')
+  <script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+  <script>
+			CKEDITOR.replace( 'editor' );
+		</script>
 </body>
 
 </html>

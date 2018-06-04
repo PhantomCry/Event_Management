@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Events;
+use App\Tags;
 
 class PostsController extends Controller
 {
@@ -40,12 +41,16 @@ class PostsController extends Controller
         ]);
         
         $event = new Events;
+        $tag = new Tags;
+
+        $tag->tagname = $request->input('tag');
         $event->eventname = $request->input('eventname');
         $event->managedBy = $request->input('organizer');
         $event->venue = $request->input('venue');
         $event->startdate = $request->input('sDate');
         $event->enddate = $request->input('eDate');
         $event->save();
+        $tag->save();
 
         return redirect('/');
 
