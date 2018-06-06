@@ -8,10 +8,12 @@ $(function () {
   // store chip content in array
   var org = [];
   var venue = [];
+  var tag = [];
 
   $('form').on('submit', function () {
     org = [];
     venue = [];
+    tag = [];
     
     $.each(M.Chips.getInstance($('#org')).chipsData, function (key, value) {
       org.push(value.tag);
@@ -21,8 +23,13 @@ $(function () {
       venue.push(value.tag);
     });
 
+    $.each(M.Chips.getInstance($('#tag')).chipsData, function (key, value) {
+      tag.push(value.tag);
+    });
+
     $('#organizerInput').val(org.join());
     $('#venueInput').val(venue.join());
+    $('#tagInput').val(tag.join());
   });
   //Action Confirmation
   $('.modal').modal();

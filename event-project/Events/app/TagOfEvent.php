@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class TagOfEvent extends Model
+class TagOfEvent extends Pivot
 {
-    //
+    
 }

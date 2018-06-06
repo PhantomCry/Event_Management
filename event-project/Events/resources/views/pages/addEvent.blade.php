@@ -36,65 +36,87 @@
       <div class="row">
         <div class="col s6">
           <div class="input-field">
-            {{Form::label('eventname', 'Event Name', ['class' => 'pink-text'])}}
-            {{Form::text('eventname', '')}}
+            {{Form::text('eventname', '', ['placeholder'=> 'Event Name'])}}
           </div>
         </div>
         <div class="col s6">
             <div class="chips" id="org">
             </div>
-            {{Form::text('organizer', '', ['style'=> 'border:none;margin:0;padding:0', 
-            'class'=>'hide','id'=>'organizerInput'])}}
+            {{Form::text('organizer', '', ['class'=>'hide','id'=>'organizerInput'])}}
         </div>
       </div>
       <div class="row">
         <div class="col s6">
             <div class="chips" id="venue"></div>
-            {{Form::text('venue', '', ['style'=> 'border:none;margin:0;padding:0', 
-            'class'=>'hide','id'=>'venueInput'])}}
+            {{Form::text('venue', '', ['class'=>'hide','id'=>'venueInput'])}}
         </div>
         <div class="col s6">
           <div class="input-field">
-            {{Form::label('sDate', 'Start Date', ['class' => 'pink-text'])}}
-            {{Form::text('sDate', '', ['class' => 'datepicker'])}}
+            {{Form::text('sDate', '', ['class' => 'datepicker', 'placeholder'=>'Start Date'])}}
           </div>
         </div>
         <div class="col s6">
-            <div class="input-field">
-                {{Form::label('tag', 'Tag', ['class' => 'pink-text'])}}
-                {{Form::text('tag', '')}}
-              </div>
+          <div class="chips" id="tag"></div>
+          {{Form::text('tag', '', ['class'=>'hide','id'=>'tagInput'])}}
         </div>
         <div class="col s6">
           <div class="input-field">
-            {{Form::label('eDate', 'End Date', ['class' => 'pink-text'])}}
-            {{Form::text('eDate', '', ['class' => 'datepicker'])}}
+            {{Form::text('eDate', '', ['class' => 'datepicker', 'placeholder'=>'End Date'])}}
           </div>
         </div>
       </div>
-
-      <div>
-        <div class="input-field">
-            {{Form::label('field', 'Field Title', ['class' => 'pink-text'])}}
-            {{Form::text('field', '')}}
-        </div>
-        <div class="input-field">
-          <div class="pink-text">
-            <span>Body</span>
-          </div>
-            {{Form::textarea('body', '', ['id'=>'editor'])}}
-        </div>
-        <div class="p-1">
-            <button type="button" class="btn pink right">Add Field</button>
-        </div>
+      {{-- Add New Fields --}}
+      <div class="input-fields">
+        {{Form::text('field[]', '', ['placeholder'=>'Field Name'])}}
       </div>
+      <button type="button" id="add">Add field</button>
+      <button type="submit">Submit</button>
       
     {!! Form::close() !!}
+    <div class="result"></div>
+
   </div>
   @include('includes.scripts')
-  <script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+  {{-- <script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script> --}}
   <script>
-			CKEDITOR.replace( 'editor' );
+      //CKEditor implementation
+      // CKEDITOR.replace( 'editor' );
+      
+      //Placeholders for Chips
+      $('#org').chips({
+        placeholder: 'Organizer'
+      });
+      $('#venue').chips({
+        placeholder: 'Venue'
+      });
+      
+      $('#tag').chips({
+        placeholder: 'Tags'
+      });
+
+
+      //Add Fields
+      $(function() {
+      $('#add').on('click', function() {
+        $('.input-fields').append('<input type="text" name="field[]">');
+      });
+
+      // $('form').on('submit', function(evt) {
+      //   evt.preventDefault();
+
+      //   $.ajax({
+      //     type: 'POST',
+      //     data: $('form').serialize(),
+      //     url: $('form').attr('action'),
+      //     success: function(res) {
+      //       $('.result').html(res);
+      //     },
+      //     error: function() {
+      //       console.log('ndi gumana');
+      //     }
+      //   });
+      // });
+    });
 		</script>
 </body>
 

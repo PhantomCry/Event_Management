@@ -14,7 +14,7 @@
 
 <body>
   @include ('includes/header') @if(count($events) > 0)
-  <div class="row" id="events">
+  <div class="row grid" id="events">
     @foreach($events as $event)
     <div class="col s12 m4 l3 events-col">
       <a href="/event/{{$event->idevents}}">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events;
 use App\Tags;
+use App\Fields;
 
 class PostsController extends Controller
 {
@@ -36,23 +37,27 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'eventname' => 'required'           
-        ]);
+        // $this->validate($request, [
+        //     'eventname' => 'required'           
+        // ]);
+        $exploded = explode(',', $request->input('tag'));
+        foreach ($exploded as $e) {
+          $tag = new Tags;
+          $tag->tagname = $e;
+          $tag->save();
+        }
+        return back();
         
-        $event = new Events;
-        $tag = new Tags;
+        // $event = new Events;
+        // $event->eventname = $request->input('eventname');
+        // $event->managedBy = $request->input('organizer');
+        // $event->venue = $request->input('venue');
+        // $event->startdate = $request->input('sDate');
+        // $event->enddate = $request->input('eDate');
+        // $event->save();
+        // $event->tags()->attach([$tag->tagID]);
 
-        $tag->tagname = $request->input('tag');
-        $event->eventname = $request->input('eventname');
-        $event->managedBy = $request->input('organizer');
-        $event->venue = $request->input('venue');
-        $event->startdate = $request->input('sDate');
-        $event->enddate = $request->input('eDate');
-        $event->save();
-        $tag->save();
-
-        return redirect('/');
+        
 
 
     }

@@ -10,7 +10,6 @@ class Events extends Model
   public $timestamps = false;
 
   public function tags(){
-    return $this->hasMany('App\Tags');
+    return $this->belongsToMany('App\Tags','tag_of_events', 'idevents', 'tagID');
   }
-
 }

@@ -3,7 +3,7 @@
     <a href="/" class="brand-logo ml-3">
       <img src="{{asset('images/LOGO.png')}}" alt="Logo" id="addEventLogo">
     </a>
-    <div class="nav-wrapper flex">
+    <div class="nav-wrapper flex transparent">
       <ul class="ml-auto mr-2 my-auto">
         <li><a href="event/create" class="btn pink">Add Event</a></li>
       </ul>
