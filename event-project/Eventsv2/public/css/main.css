@@ -235,7 +235,7 @@
 
 #header {
   transition: .4s ease-in-out;
-  background-image: url(http://absfreepic.com/absolutely_free_photos/small_photos/silver-laptop-on-a-black-background-3888x2592_20486.jpg);
+  background-image: url(https://scontent-sea1-1.cdninstagram.com/vp/0c274ecec5d1461c19b944d9802cb77e/5BAA79BA/t51.2885-15/e35/18162187_411163135920336_9025519222993715200_n.jpg?se=7&ig_cache_key=MTUwMzc2OTI1NTIwNDA3NTg1MQ%3D%3D.2);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -252,7 +252,7 @@
 
 #logo {
   margin-bottom: 2%;
-  height: 300px;
+  height: 100px;
 }
 
 #addEventLogo {
@@ -305,6 +305,12 @@ input[class="boxes"] {
   }
   .boxes{
     border: 1px solid black;
+
+  }
+  .boxes-home{
+    border: 1px solid black;
+    background-color: white;
+
   }
   
   .con{
@@ -325,8 +331,8 @@ input[class="boxes"] {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 40%;
-    left: 17%;
+    left: 16%;
+    bottom: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
@@ -351,9 +357,23 @@ input[class="boxes"] {
   }
 
   .btn{
-    background-color: #7f7575!important;
+    background-color: rgb(176, 176, 128)!important;
+    height: 45px!important;
   }
 
   .grey{
-    background-color: #5e5e5e!important;
+    background-color: #5e5e5e!important; color: #f0f0d0!important;
   }
+
+.cons{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f0f0d0;
+
+ }
+
+
+ input[type="submit"]{
+ color: #f0f0d0!important;
+ }

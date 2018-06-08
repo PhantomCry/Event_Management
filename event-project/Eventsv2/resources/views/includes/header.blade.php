@@ -13,7 +13,7 @@
     <img src="{{asset('images/LOGO.png')}}" class="mx-auto" id="logo">
     <div class="flex">
       <a href="event/create" class="btn my-auto pink shrink-0" id="exaddeve">Add Event</a>
-      <div class="input-field m-auto grow px-1" id="searchField">
+      <div class="input-field m-auto grow px-1 boxes-home" id="searchField">
         <i class="material-icons prefix">search</i>
         <input type="text" class="mb-0" id="search" autocomplete="off">
       </div>

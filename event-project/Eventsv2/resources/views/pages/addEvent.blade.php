@@ -19,11 +19,12 @@
       </a>
     </div>
   </nav>
-  <div class="container">
+  <div class="container ">
     @include('includes.messages')
   </div>
-  <div class="row mt-1">
-    <div class="col s4 container">
+  <div class="container cons">
+  <div class="row mt-1 ">
+    <div class="col s3 container">
       <img src="/uploads/avatar/default.png" class="responsive-img materialbox" id="avatar">
       <div class="btn-group flex flex-column">
 
@@ -44,15 +45,13 @@
 					<input type="hidden" value="{{ csrf_token() }}" name="_token">
 				</form>
 
-			</div>
-
-    
-        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button> </div>
+  
+        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Cancel</button> 
+        
+        </div>
       
+        </div>
 
-
-        {{Form::submit('Save Event', ['form'=> 'eventform', 'class' => 'btn center waves-effect mx-auto mt-1 w-100 pink'])}}
-        <button class="btn center waves-effect mx-auto mt-1 w-100 pink">Delete Event</button>
       </div>
      
     </div>
@@ -114,7 +113,15 @@
         </div>
       </div>
       
+
+      <div class="row">
+      <div class="col"> <button class="btn right waves-effect mx-auto mt-1 w-100 pink">Delete Event</button></div>
+              <div class="col right">
+      {{Form::submit('Save Event', ['form'=> 'eventform', 'class' => 'btn center waves-effect mx-auto mt-1 w-100 pink'])}}</div>
+     
+      </div>
     {!! Form::close() !!}
+  </div>
   </div>
   @include('includes.scripts')
   <script>
